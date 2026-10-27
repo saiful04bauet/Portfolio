@@ -4,7 +4,7 @@ A responsive, buildless portfolio focused on growth, business development, and c
 
 ## Design
 
-A bright lilac, coral, turquoise, and warm yellow palette over a light background, with frosted glass panels, layered 3D CSS objects, a portrait card, and pointer-responsive perspective. An explicit motion control and the system reduced-motion preference make the presentation comfortable to use. No WebGL dependency or external rendering service is required.
+The supplied Coolors palette of hot pink, magenta, violet, royal blue, and cyan over a light background, with frosted glass panels, layered 3D CSS objects, a portrait card, and pointer-responsive perspective. An explicit motion control and the system reduced-motion preference make the presentation comfortable to use. No WebGL dependency or external rendering service is required.
 
 ## Featured work
 
@@ -35,3 +35,9 @@ Nimbus Sans is distributed under the GNU Affero General Public License version 3
 The current portfolio is in `dist/`. Earlier root-level portfolio files are retained as legacy work and are not served by this Netlify configuration.
 
 The public repository and deployment omit the full CV PDF. The Request CV link opens an email draft; it does not send a message automatically.
+
+## Published portfolio
+
+https://md-saiful-islam-ridoy.netlify.app/
+
+Palette: https://coolors.co/palette/f72585-b5179e-7209b7-560bad-480ca8-3a0ca3-3f37c9-4361ee-4895ef-4cc9f0
