@@ -24,7 +24,7 @@ document.addEventListener('keydown', event => {
     menuToggle.focus();
   }
 });
-window.matchMedia('(min-width: 761px)').addEventListener('change', event => {
+window.matchMedia('(min-width: 621px)').addEventListener('change', event => {
   if (event.matches) closeMenu();
 });
 let scrollQueued = false;
@@ -57,6 +57,7 @@ function syncMotion() {
   motionButton.setAttribute('aria-pressed', String(motionPaused));
   motionButton.setAttribute('aria-label', motionPaused ? 'Enable visual motion' : 'Pause visual motion');
   motionButton.querySelector('use').setAttribute('href', motionPaused ? '#play' : '#pause');
+  motionButton.querySelector('span').textContent = motionPaused ? 'Motion off' : 'Motion on';
   if (motionPaused) resetPerspective();
 }
 motionButton.addEventListener('click', () => { motionPaused = !motionPaused; syncMotion(); });
@@ -94,11 +95,13 @@ dialog.addEventListener('close', () => {
 });
 
 const navLinks = Array.from(document.querySelectorAll('.desktop-nav a'));
+const mobileLinks = Array.from(document.querySelectorAll('.mobile-nav a'));
+const allNavLinks = [...navLinks, ...mobileLinks];
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      navLinks.forEach(link => {
+      allNavLinks.forEach(link => {
         if (link.hash === '#' + entry.target.id) link.setAttribute('aria-current', 'location');
         else link.removeAttribute('aria-current');
       });

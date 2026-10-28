@@ -1,43 +1,43 @@
 # Md. Saiful Islam Ridoy — Professional Portfolio
 
-A responsive, buildless portfolio focused on growth, business development, and creative technical exploration.
+A responsive, buildless portfolio for a growth and business development professional with an engineering background.
 
 ## Design
 
-The supplied Coolors palette of hot pink, magenta, violet, royal blue, and cyan over a light background, with frosted glass panels, layered 3D CSS objects, a portrait card, and pointer-responsive perspective. An explicit motion control and the system reduced-motion preference make the presentation comfortable to use. No WebGL dependency or external rendering service is required.
+A cobalt hero, warm cream background, coral contact panel, and small yellow accents. Large editorial typography, an upright arched portrait, restrained 3D glass objects, an interactive skills list, a screenshot-led Hothat showcase, and a compact career section. Visual motion can be paused and respects reduced-motion preferences.
 
-## Featured work
+## Content
 
-Hothat is the single featured project, with a direct live link, a project overview, and a genuine screenshot of its public homepage. Hothat's public landing page was reviewed on 27 October 2026 to describe its interface accurately; no end-to-end testing of conversations is claimed. No university projects are displayed.
+Hothat is the single featured project. No university projects are displayed. Career results, roles, dates, education, training, and leadership are grounded in the supplied CV. The sales increase from 200K to 400K is described as a contribution to a company result without inferring a currency. Hothat’s landing-page interface was reviewed; end-to-end conversations have not been tested.
 
-Career results, roles, dates, education, training, and leadership are grounded in the supplied CV. The company sales increase from 200K to 400K is explicitly described as a contribution to a company result, with no currency inferred.
+The full CV PDF is omitted from the public repository and deployment. “Request my CV” opens an email draft. Contact links do not send a message automatically.
 
-## Structure
+## Editing
 
-- `dist/index.html`: portfolio content, semantic structure, metadata, and project overview dialog.
-- `dist/styles.css`: responsive glass design, native CSS 3D objects, animation, reduced-motion and print support.
-- `dist/colors.css`: colorful surfaces, glass materials, foreground contrast, and the light theme.
-- `dist/app.js`: navigation, pointer perspective, motion controls, overview dialog, copy email, and Dhaka clock.
-- `dist/assets/`: user-provided portraits, Hothat's public logo and homepage preview, local fonts, and favicon.
+- `dist/index.html`: content, metadata, and project overview dialog.
+- `dist/colors.css`: color tokens.
+- `dist/styles.css`: responsive layouts, typography, glass objects, and print support.
+- `dist/app.js`: navigation, motion control, project dialog, email copy, and Dhaka clock.
+- `dist/assets/`: compressed user-provided portraits, Hothat screenshot and logo, local fonts, and favicon.
 
-## Editing and hosting
+All rendering assets are local. No dependencies or paid APIs are required.
 
-Update text in `dist/index.html`, visuals in `dist/styles.css`, and behavior in `dist/app.js`. Portraits are compressed as WebP for faster loading. Serve `dist` on a static host. Netlify uses `netlify.toml` to publish the `dist` directory, with a small dependency-free build script that uses the Netlify site URL for canonical and sharing metadata.
+## Netlify
 
-The contact buttons use email and telephone links. No message is sent by this site. All rendering assets are local, and there are no runtime dependencies or paid API requirements.
+Live URL: https://saifulridoy.netlify.app/
+
+`netlify.toml` publishes `dist/` and runs `node scripts/prepare-netlify.mjs` to configure canonical and sharing URLs for the assigned Netlify origin. The current live deployment uses Netlify Drop; GitHub changes do not automatically publish.
+
+To create the equivalent self-contained HTML for Netlify Drop:
+
+```sh
+node scripts/bundle-static.mjs /absolute/output/index.html
+```
+
+The bundle embeds styles, scripts, images, fonts, and the font license. Its social sharing image points to the public GitHub portrait.
+
+Earlier root-level portfolio files are preserved as legacy work and are not served by this Netlify configuration.
 
 ## Font license
 
 Nimbus Sans is distributed under the GNU Affero General Public License version 3 with a font exception. See `dist/assets/FONT-LICENSE.txt`.
-
-## Repository notes
-
-The current portfolio is in `dist/`. Earlier root-level portfolio files are retained as legacy work and are not served by this Netlify configuration.
-
-The public repository and deployment omit the full CV PDF. The Request CV link opens an email draft; it does not send a message automatically.
-
-## Published portfolio
-
-https://md-saiful-islam-ridoy.netlify.app/
-
-Palette: https://coolors.co/palette/f72585-b5179e-7209b7-560bad-480ca8-3a0ca3-3f37c9-4361ee-4895ef-4cc9f0
