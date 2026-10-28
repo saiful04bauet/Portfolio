@@ -4,7 +4,7 @@ A responsive, buildless portfolio for a growth and business development professi
 
 ## Design
 
-A cobalt hero, warm cream background, coral contact panel, and small yellow accents. Large editorial typography, an upright arched portrait, restrained 3D glass objects, an interactive skills list, a screenshot-led Hothat showcase, and a compact career section. Visual motion can be paused and respects reduced-motion preferences.
+A cobalt hero, warm cream background, coral contact panel, and small yellow accents. Large editorial typography, an upright arched portrait, restrained 3D glass objects, an interactive skills list, a screenshot-led Hothat showcase, and a compact career section. Hero text enters in sequence, sections reveal on scroll, grouped items stagger, and buttons and project previews respond on hover. Visual motion can be paused and respects reduced-motion preferences. Keyboard focus reveals its section immediately.
 
 ## Content
 

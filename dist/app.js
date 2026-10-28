@@ -142,3 +142,33 @@ function updateClock() {
 updateClock();
 setInterval(updateClock, 60000);
 document.querySelector('#year').textContent = new Intl.DateTimeFormat('en', { timeZone: 'Asia/Dhaka', year: 'numeric' }).format(new Date());
+
+// Reveal sections once, with a small stagger for grouped statistics and roles.
+const revealElements = Array.from(document.querySelectorAll('.impact-label, .stat, .section-heading, .project-card, .work-footer, .expertise-intro, .expertise-list, .experience-item, .about-photo, .about-copy, .contact-top, .contact-main, .contact-bottom'));
+for (const selector of ['.impact .stat', '.experience-grid .experience-item']) {
+  document.querySelectorAll(selector).forEach((element, index) => {
+    element.style.setProperty('--reveal-delay', `${index * 90}ms`);
+  });
+}
+if ('IntersectionObserver' in window && !reduceMotion.matches) {
+  const revealObserver = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.add('is-revealed');
+      revealObserver.unobserve(entry.target);
+    }
+  }, { threshold: 0.08, rootMargin: '0px 0px -28px 0px' });
+  for (const element of revealElements) {
+    element.setAttribute('data-reveal', '');
+    revealObserver.observe(element);
+  }
+  document.body.classList.add('reveal-enabled');
+  // Keyboard navigation should never land in visually hidden content.
+  document.addEventListener('focusin', event => {
+    const section = event.target.closest('[data-reveal]');
+    if (section) {
+      section.classList.add('is-revealed');
+      revealObserver.unobserve(section);
+    }
+  });
+}
